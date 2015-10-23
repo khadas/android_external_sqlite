@@ -7608,6 +7608,7 @@ SQLITE_API int SQLITE_STDCALL sqlite3_vtab_on_conflict(sqlite3 *);
 SQLITE_API int sqlite3_set_sync_flag(int sync_flag);
 #define sqlite3_set_sync_flag(_flag) sqlite3_set_sync_flag(_flag)
 
+/*
 ** CAPI3REF: Prepared Statement Scan Status Opcodes
 ** KEYWORDS: {scanstatus options}
 **
