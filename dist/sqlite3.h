@@ -7688,6 +7688,17 @@ SQLITE_API int SQLITE_STDCALL sqlite3_vtab_on_conflict(sqlite3 *);
 #define SQLITE_REPLACE  5
 
 /*
+** NON-STANDARD CAPI: Set the data sync flag.
+**
+** The sqlite3_exec(),sqlite3_step(), etc. may cost too much time due to
+** call fsync() in some file systems. This function is designed to provide
+** a static sync_flag, the fsync()/fdatasync() will not be called if this
+** flag is non-zero.The default value is 1 to enable sync.
+*/
+SQLITE_API int sqlite3_set_sync_flag(int sync_flag);
+#define sqlite3_set_sync_flag(_flag) sqlite3_set_sync_flag(_flag)
+
+/*
 ** CAPI3REF: Prepared Statement Scan Status Opcodes
 ** KEYWORDS: {scanstatus options}
 **
